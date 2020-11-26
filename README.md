@@ -1,4 +1,4 @@
-(./assets/preview.jpg)
+![Design preview for Clock API coding challenge](./assets/preview.jpg)
 Welcome!
 
 Thanks for purchasing this premium Frontend Mentor coding challenge.
