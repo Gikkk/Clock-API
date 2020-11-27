@@ -1,0 +1,21 @@
+{
+  "name": "clockapi",
+  "version": "1.0.0",
+  "description": "![Design preview for Clock API coding challenge](./assets/preview.jpg)\r Welcome!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gikkk/Clock-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gikkk/Clock-API/issues"
+  },
+  "homepage": "https://github.com/Gikkk/Clock-API#readme",
+  "dependencies": {}
+}
