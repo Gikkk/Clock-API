@@ -47,7 +47,7 @@ async function getLocation() {
       'https://freegeoip.app/json/'
     );
     console.log(responseData.country_code);
-    console.log(responseData.region_name);    
+    console.log(responseData.city);    
   } catch (error) {
     console.log(error);
   }
