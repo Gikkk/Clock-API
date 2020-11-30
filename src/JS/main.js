@@ -25,18 +25,21 @@ function sendHttpRequest(method, url, data) {
   return promise;
 }
 
-async function getTime() {
+async function getTimezone() {
   try {
     const responseData = await sendHttpRequest(
       'GET',
       "http://worldtimeapi.org/api/ip"
     );
-    console.log(responseData.utc_offset);
-    console.log(responseData.datetime);
     console.log(responseData.day_of_week);
     console.log(responseData.week_number);
     console.log(responseData.day_of_year);
     console.log(responseData.timezone);
+
+
+    const offset = document.querySelector(".offset");
+    offset.textContent = `${responseData.utc_offset}`
+
   } catch (error) {
     console.log(error);
   }
@@ -48,8 +51,12 @@ async function getLocation() {
       'GET',
       'https://freegeoip.app/json/'
     );
-    console.log(responseData.country_code);
-    console.log(responseData.city);    
+    const city = document.querySelector(".city");
+    const index = document.querySelector(".index");
+
+    city.textContent = `${responseData.city}`
+    index.textContent = `${responseData.country_code}`
+
   } catch (error) {
     console.log(error);
   }
@@ -82,6 +89,17 @@ async function getQuotes() {
   }
 }
 
-getTime();
+
+function getTime(){
+  let currentTime = new Date();
+  let hour = currentTime.getHours()
+  let minute = currentTime.getMinutes();
+
+  const time = document.querySelector(".time");
+  time.textContent = `${hour}:${minute}`
+}
+
+getTimezone();
 getLocation();
 getQuotes();
+getTime();
