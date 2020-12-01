@@ -36,9 +36,8 @@ async function getTimezone() {
     console.log(responseData.day_of_year);
     console.log(responseData.timezone);
 
-
-    const offset = document.querySelector(".offset");
-    offset.textContent = `${responseData.utc_offset}`
+    const abbreviation = document.querySelector(".info__abbreviation");
+    abbreviation.textContent = `${responseData.abbreviation}`
 
   } catch (error) {
     console.log(error);
@@ -51,10 +50,10 @@ async function getLocation() {
       'GET',
       'https://freegeoip.app/json/'
     );
-    const city = document.querySelector(".city");
-    const index = document.querySelector(".index");
+    const city = document.querySelector(".info__city");
+    const index = document.querySelector(".info__index");
 
-    city.textContent = `${responseData.city}`
+    city.textContent = `${responseData.city}, `
     index.textContent = `${responseData.country_code}`
 
   } catch (error) {
@@ -94,8 +93,22 @@ function getTime(){
   let currentTime = new Date();
   let hour = currentTime.getHours()
   let minute = currentTime.getMinutes();
+  
+  // function getHourFormat () {
+  //   if (hour < 10) {
+  //     let hourFormat = '0' + hour;
+  //   }
+  //   return hourFormat;
+  // };
 
-  const time = document.querySelector(".time");
+  // function getMinuteFormat () {
+  //   if (minute < 10) {
+  //     let minuteFormat = '0' + minute;
+  //   }
+  //   return minuteFormat;
+  // };
+
+  const time = document.querySelector(".info__time");
   time.textContent = `${hour}:${minute}`
 }
 
