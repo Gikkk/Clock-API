@@ -7,10 +7,12 @@
   bottom: 0;
   right: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1rem 1rem 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow:inset 0 0 0 2500px rgba(0, 0, 0, 0.4);
+  color: $primary-color;
 }
 
 @media (min-width: 640px){
@@ -38,23 +40,19 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  font-size: 1.2rem;
   margin: 0;
+  padding-bottom: 3rem;
 
   &__btn{
     background: transparent;
     border: none;
     outline: none;
-    margin: 1rem;
-  }
-
-  &__text{
-    font-weight: 400;
-    margin: 0;
+    margin: 1.5rem;
   }
 
   &__author{
     font-weight: 700;
+    margin: 0;
   }
 }
 
@@ -62,20 +60,24 @@
   margin: 1rem 0;
 
   &__time{
-    font-size: 5rem;
+    font-size: 7rem;
+    font-weight: 700;
   }
 
   &__city{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 
   &__index{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 }
 
 .greeting{
   display: flex;
+  align-items: center;
 
   &__text{
     margin: 0;
@@ -84,73 +86,7 @@
   }
 }
 
-// switch btn 
-.switch {
+// support
+.prop{
   position: relative;
-  display: inline-block;
-  width: 90px;
-  height: 34px;
 }
-
-.switch input {
-  display:none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $primary-color;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: black;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2ab934;
-}
-
-input:checked + .slider:before {
-  transform: translateX(55px);
-}
-.on
-{
-  display: none;
-}
-
-.on, .off
-{
-  color:black;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  font-size: 10px;
-  font-family: Verdana, sans-serif;
-}
-
-input:checked+ .slider .on
-{display: block;}
-
-input:checked + .slider .off
-{display: none;}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;}

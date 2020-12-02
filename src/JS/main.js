@@ -1,4 +1,6 @@
 const quotes =  document.querySelector(".quotes")
+const toggler = document.querySelector(".switch");
+const mainContent = document.querySelector(".main");
 
 function sendHttpRequest(method, url, data) {
   const promise = new Promise((resolve, reject) => {
@@ -88,29 +90,24 @@ async function getQuotes() {
   }
 }
 
-
 function getTime(){
   let currentTime = new Date();
   let hour = currentTime.getHours()
   let minute = currentTime.getMinutes();
-  
-  // function getHourFormat () {
-  //   if (hour < 10) {
-  //     let hourFormat = '0' + hour;
-  //   }
-  //   return hourFormat;
-  // };
-
-  // function getMinuteFormat () {
-  //   if (minute < 10) {
-  //     let minuteFormat = '0' + minute;
-  //   }
-  //   return minuteFormat;
-  // };
 
   const time = document.querySelector(".info__time");
   time.textContent = `${hour}:${minute}`
 }
+
+function toggleInfo(){
+  mainContent.classList.toggle("prop");
+  if(toggler.textContent === "More"){
+    toggler.textContent = "Less"
+  } else if(toggler.textContent === "Less"){
+    toggler.textContent = "More"
+  }
+}
+toggler.addEventListener("click", toggleInfo);
 
 getTimezone();
 getLocation();
