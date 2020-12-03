@@ -2,6 +2,7 @@ const quotes =  document.querySelector(".quotes")
 const toggler = document.querySelector(".switch");
 const mainContent = document.querySelector(".main");
 
+// http request function 
 function sendHttpRequest(method, url, data) {
   const promise = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -27,16 +28,27 @@ function sendHttpRequest(method, url, data) {
   return promise;
 }
 
+// GET request - details
 async function getTimezone() {
   try {
     const responseData = await sendHttpRequest(
       'GET',
       "http://worldtimeapi.org/api/ip"
     );
-    console.log(responseData.day_of_week);
-    console.log(responseData.week_number);
-    console.log(responseData.day_of_year);
-    console.log(responseData.timezone);
+    // console.log(responseData.day_of_week);
+    // console.log(responseData.week_number);
+    // console.log(responseData.day_of_year);
+    // console.log(responseData.timezone);
+    const year = document.querySelector(".details__year");
+    const week = document.querySelector(".details__week");
+    const day = document.querySelector(".details__day");
+    const timezone = document.querySelector(".details__timezone");
+
+    year.textContent = `${responseData.day_of_year}`
+    week.textContent = `${responseData.week_number}`
+    day.textContent = `${responseData.day_of_week}`
+    timezone.textContent = `${responseData.timezone}`
+
 
     const abbreviation = document.querySelector(".info__abbreviation");
     abbreviation.textContent = `${responseData.abbreviation}`
@@ -46,6 +58,7 @@ async function getTimezone() {
   }
 }
 
+// GET request - location
 async function getLocation() {
   try {
     const responseData = await sendHttpRequest(
@@ -63,6 +76,7 @@ async function getLocation() {
   }
 }
 
+// GET request - quotes
 async function getQuotes() {
   try {
     const responseData = await sendHttpRequest(
@@ -90,15 +104,33 @@ async function getQuotes() {
   }
 }
 
+// function of getting time 
 function getTime(){
   let currentTime = new Date();
   let hour = currentTime.getHours()
   let minute = currentTime.getMinutes();
 
   const time = document.querySelector(".info__time");
-  time.textContent = `${hour}:${minute}`
+  
+  if(hour < 10 && minute < 14){
+    hour = 0 + `${hour}`;
+    minute = 0 + `${minute}`;
+    time.textContent = `${hour}:${minute}`
+  }else if(hour < 10 && minute < 60){
+    hour = 0 + `${hour}`;
+    time.textContent = `${hour}:${minute}`
+  }else if(hour < 25 && minute < 10){
+    minute = 0 + `${minute}`;
+    time.textContent = `${hour}:${minute}`
+  }else{
+    time.textContent = `${hour}:${minute}`
+  }
+
+  let interval = (60 - (new Date()).getSeconds()) * 1000 + 5;
+  setTimeout(getTime,interval)
 }
 
+// show more details btn 
 function toggleInfo(){
   mainContent.classList.toggle("prop");
   if(toggler.textContent === "More"){
@@ -109,6 +141,8 @@ function toggleInfo(){
 }
 toggler.addEventListener("click", toggleInfo);
 
+
+// calling for functions 
 getTimezone();
 getLocation();
 getQuotes();

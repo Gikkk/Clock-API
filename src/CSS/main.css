@@ -4,7 +4,8 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif; }
+  font-family: 'Inter', sans-serif;
+  background: #303030; }
 
 .switch {
   border: none;
@@ -79,7 +80,7 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    margin: 1.5rem; }
+    margin: 1.5rem 0.5rem; }
   .quotes__author {
     font-weight: 700;
     margin: 0; }
@@ -87,7 +88,7 @@ body {
 .info {
   margin: 1rem 0; }
   .info__time {
-    font-size: 7rem;
+    font-size: 6.4rem;
     font-weight: 700; }
   .info__city {
     font-size: 1.5rem;
@@ -106,5 +107,24 @@ body {
 
 .prop {
   position: relative; }
+
+.details {
+  color: white;
+  padding: 1rem; }
+  .details .details__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .details .details__highlighted {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1rem 0; }
+
+.rotatable {
+  animation: spin 4s linear infinite; }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=main.css.map */

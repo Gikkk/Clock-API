@@ -47,7 +47,7 @@
     background: transparent;
     border: none;
     outline: none;
-    margin: 1.5rem;
+    margin: 1.5rem 0.5rem;
   }
 
   &__author{
@@ -60,7 +60,7 @@
   margin: 1rem 0;
 
   &__time{
-    font-size: 7rem;
+    font-size: 6.4rem;
     font-weight: 700;
   }
 
@@ -90,3 +90,26 @@
 .prop{
   position: relative;
 }
+
+.details{
+  color: white;
+  padding: 1rem;
+  
+  .details__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .details__highlighted{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+}
+
+.rotatable{
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin { 100% { transform:rotate(360deg); } }
