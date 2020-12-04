@@ -105,6 +105,12 @@ body {
     padding-left: 0.5rem;
     font-size: 14px; }
 
+.rotatable {
+  animation: spin 8s linear infinite; }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
 .prop {
   position: relative; }
 
@@ -119,12 +125,5 @@ body {
     font-size: 1.3rem;
     font-weight: 700;
     margin: 1rem 0; }
-
-.rotatable {
-  animation: spin 4s linear infinite; }
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=main.css.map */

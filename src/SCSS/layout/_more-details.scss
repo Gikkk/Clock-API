@@ -1,0 +1,16 @@
+.details{
+  color: white;
+  padding: 1rem;
+  
+  .details__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .details__highlighted{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+}

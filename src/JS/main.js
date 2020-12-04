@@ -1,6 +1,26 @@
+// quotes place
 const quotes =  document.querySelector(".quotes")
+const author = document.querySelector(".quotes__author");
+
+// button
 const toggler = document.querySelector(".switch");
+
+// main content 
 const mainContent = document.querySelector(".main");
+
+// details 
+const year = document.querySelector(".details__year");
+const week = document.querySelector(".details__week");
+const day = document.querySelector(".details__day");
+const timezone = document.querySelector(".details__timezone");
+
+// time place
+const abbreviation = document.querySelector(".info__abbreviation");
+const city = document.querySelector(".info__city");
+const index = document.querySelector(".info__index");
+const time = document.querySelector(".info__time");
+const greeting =  document.querySelector('.greeting__text');
+
 
 // http request function 
 function sendHttpRequest(method, url, data) {
@@ -35,22 +55,11 @@ async function getTimezone() {
       'GET',
       "http://worldtimeapi.org/api/ip"
     );
-    // console.log(responseData.day_of_week);
-    // console.log(responseData.week_number);
-    // console.log(responseData.day_of_year);
-    // console.log(responseData.timezone);
-    const year = document.querySelector(".details__year");
-    const week = document.querySelector(".details__week");
-    const day = document.querySelector(".details__day");
-    const timezone = document.querySelector(".details__timezone");
 
     year.textContent = `${responseData.day_of_year}`
     week.textContent = `${responseData.week_number}`
     day.textContent = `${responseData.day_of_week}`
     timezone.textContent = `${responseData.timezone}`
-
-
-    const abbreviation = document.querySelector(".info__abbreviation");
     abbreviation.textContent = `${responseData.abbreviation}`
 
   } catch (error) {
@@ -65,9 +74,6 @@ async function getLocation() {
       'GET',
       'https://freegeoip.app/json/'
     );
-    const city = document.querySelector(".info__city");
-    const index = document.querySelector(".info__index");
-
     city.textContent = `${responseData.city}, `
     index.textContent = `${responseData.country_code}`
 
@@ -92,7 +98,6 @@ async function getQuotes() {
       <button class="quotes__btn" onclick="getQuotes()"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M7.188 10.667a.208.208 0 01.147.355l-2.344 2.206a5.826 5.826 0 009.578-2.488l2.387.746A8.322 8.322 0 013.17 14.94l-2.149 2.022a.208.208 0 01-.355-.148v-6.148h6.52zm7.617-7.63L16.978.958a.208.208 0 01.355.146v6.23h-6.498a.208.208 0 01-.147-.356L13 4.765A5.825 5.825 0 003.43 7.26l-2.386-.746a8.32 8.32 0 0113.76-3.477z" fill: #000 fill-rule="nonzero" opacity=".5"/></svg>
       </button>`
 
-      const author = document.querySelector(".quotes__author");
       if (responseData.author === null) {
         author.textContent = 'Unknown author'
       } else {
@@ -109,8 +114,6 @@ function getTime(){
   let currentTime = new Date();
   let hour = currentTime.getHours()
   let minute = currentTime.getMinutes();
-
-  const time = document.querySelector(".info__time");
   
   if(hour < 10 && minute < 14){
     hour = 0 + `${hour}`;
@@ -125,6 +128,33 @@ function getTime(){
   }else{
     time.textContent = `${hour}:${minute}`
   }
+
+  //Time of day
+  let greet = '';
+  if (hour >= 5 && hour <= 11) {
+    greet = 'MORNING';
+  } else if (hour >= 12 && hour <= 17) {
+    greet = 'AFTERNOON';
+  } 
+  else {
+    greet = 'EVENING';
+  }
+
+  greeting.textContent = `GOOD ${greet}, IT'S CURRENTLY`
+
+
+  // //Bg and icon
+	// if (hour >= 5 && hour <= 17 ) {
+	// 	background.classList.add('day');
+	// 	icon.src = './assets/desktop/icon-sun.svg';
+	// 	icon.setAttribute("alt", "sun icon");
+	// } else {
+	// 	background.classList.add('night');
+	// 	icon.src = './assets/desktop/icon-moon.svg';
+	// 	icon.setAttribute("alt", "moon icon");
+	// 	details.style.color = '#fff';
+	// 	details.style.background = 'rgba(0, 0, 0, 0.75)';
+	// }
 
   let interval = (60 - (new Date()).getSeconds()) * 1000 + 5;
   setTimeout(getTime,interval)
