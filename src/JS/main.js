@@ -20,6 +20,7 @@ const city = document.querySelector(".info__city");
 const index = document.querySelector(".info__index");
 const time = document.querySelector(".info__time");
 const greeting =  document.querySelector('.greeting__text');
+const dayNightIcon =  document.querySelector('.icon');
 
 
 // http request function 
@@ -130,31 +131,31 @@ function getTime(){
   }
 
   //Time of day
-  let greet = '';
+  let greetText = '';
   if (hour >= 5 && hour <= 11) {
-    greet = 'MORNING';
+    greetText = 'MORNING';
   } else if (hour >= 12 && hour <= 17) {
-    greet = 'AFTERNOON';
+    greetText = 'AFTERNOON';
   } 
   else {
-    greet = 'EVENING';
+    greetText = 'EVENING';
   }
 
-  greeting.textContent = `GOOD ${greet}, IT'S CURRENTLY`
+  greeting.textContent = `GOOD ${greetText}, IT'S CURRENTLY`
 
-
-  // //Bg and icon
-	// if (hour >= 5 && hour <= 17 ) {
-	// 	background.classList.add('day');
-	// 	icon.src = './assets/desktop/icon-sun.svg';
-	// 	icon.setAttribute("alt", "sun icon");
-	// } else {
-	// 	background.classList.add('night');
-	// 	icon.src = './assets/desktop/icon-moon.svg';
-	// 	icon.setAttribute("alt", "moon icon");
-	// 	details.style.color = '#fff';
-	// 	details.style.background = 'rgba(0, 0, 0, 0.75)';
-	// }
+  // background & icons 
+	if (hour >= 5 && hour <= 17 ) {
+    mainContent.classList.add('day');
+    dayNightIcon.classList.add('rotatable')
+		dayNightIcon.src = './src/assets/icons/icon-sun.svg';
+		dayNightIcon.setAttribute("alt", "sun icon");
+	} else {
+		mainContent.classList.add('night');
+		dayNightIcon.src = './src/assets/icons/icon-moon.svg';
+		dayNightIcon.setAttribute("alt", "moon icon");
+		// details.style.color = '#fff';
+		// details.style.background = 'rgba(0, 0, 0, 0.75)';
+	}
 
   let interval = (60 - (new Date()).getSeconds()) * 1000 + 5;
   setTimeout(getTime,interval)
