@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #303030; }
+  background: black; }
 
 .switch {
   border: none;
@@ -108,7 +108,40 @@ body {
   background: url("../assets/mobile/bg-image-nighttime.jpg") no-repeat center fixed;
   background-size: cover; }
 
+.details {
+  color: white;
+  padding: 1rem; }
+  .details .details__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .details .details__highlighted {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1rem 0; }
+
 @media (min-width: 640px) {
+  .main {
+    padding: 3rem; }
+
+  .quotes {
+    font-size: 1.5rem; }
+
+  .info .greeting__text {
+    font-size: 1.5rem; }
+  .info .info__time {
+    font-size: 10rem; }
+  .info .info__abbreviation {
+    font-size: 1.5rem; }
+  .info .info__city {
+    font-size: 1.5rem; }
+  .info .info__index {
+    font-size: 1.5rem; }
+
+  .details {
+    color: white;
+    padding: 3rem; }
+
   .day {
     background: url("../assets/tablet/bg-image-daytime.jpg") no-repeat center fixed;
     background-size: cover; }
@@ -124,16 +157,5 @@ body {
   .night {
     background: url("../assets/desktop/bg-image-nighttime.jpg") no-repeat center fixed;
     background-size: cover; } }
-.details {
-  color: white;
-  padding: 1rem; }
-  .details .details__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-  .details .details__highlighted {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin: 1rem 0; }
 
 /*# sourceMappingURL=main.css.map */

@@ -153,8 +153,6 @@ function getTime(){
 		mainContent.classList.add('night');
 		dayNightIcon.src = './src/assets/icons/icon-moon.svg';
 		dayNightIcon.setAttribute("alt", "moon icon");
-		// details.style.color = '#fff';
-		// details.style.background = 'rgba(0, 0, 0, 0.75)';
 	}
 
   let interval = (60 - (new Date()).getSeconds()) * 1000 + 5;
