@@ -162,10 +162,10 @@ function getTime(){
 // show more details btn 
 function toggleInfo(){
   mainContent.classList.toggle("prop");
-  if(toggler.textContent === "More"){
-    toggler.textContent = "Less"
-  } else if(toggler.textContent === "Less"){
-    toggler.textContent = "More"
+  if(toggler.textContent === `<a href="#">More</a>`){
+    toggler.innerHTML = `<a>Less</a>`;
+  } else if(toggler.innerHTML === `<a href="#">Less</a>`){
+    toggler.innerHTML = `<a href="#aside">More</a>`;
   }
 }
 toggler.addEventListener("click", toggleInfo);

@@ -5,7 +5,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: black; }
+  background: black;
+  height: 100vh; }
 
 .switch {
   border: none;
@@ -19,7 +20,8 @@ body {
   z-index: 1;
   cursor: pointer;
   background: none;
-  width: 100px; }
+  width: 100px; 
+}
   .switch:before, .switch:after {
     position: absolute;
     content: '';
