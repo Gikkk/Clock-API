@@ -9,9 +9,7 @@ body {
   height: 100vh; }
 
 .switch {
-  border: none;
-  padding: 1em;
-  outline: none;
+  padding: 0.7rem;
   color: white;
   text-transform: uppercase;
   font-weight: 700;
@@ -19,20 +17,17 @@ body {
   position: relative;
   z-index: 1;
   cursor: pointer;
-  background: none;
-  width: 100px; 
-}
+  text-decoration: none; }
   .switch:before, .switch:after {
     position: absolute;
     content: '';
     top: 50%;
     left: 50%;
-    border-radius: 10em;
+    border-radius: 5px;
     transform: translateX(-50%) translateY(-50%);
     width: 105%;
     height: 105%;
     z-index: -2;
-    background-size: 400% 400%;
     background: linear-gradient(120deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); }
   .switch:before {
     filter: blur(7px);
@@ -74,7 +69,7 @@ body {
     margin: 0; }
 
 .info {
-  margin: 1rem 0; }
+  margin: 2rem 0; }
   .info__time {
     font-size: 6.4rem;
     font-weight: 700; }
