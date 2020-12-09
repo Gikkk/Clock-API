@@ -8,6 +8,20 @@ body {
   background: black;
   height: 100vh; }
 
+.main {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset 0 0 0 2500px rgba(0, 0, 0, 0.4);
+  color: white; }
+
 .switch {
   padding: 0.7rem;
   color: white;
@@ -39,20 +53,23 @@ body {
     width: 115%;
     height: 115%; }
 
-.main {
-  height: 100%;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding: 1rem 1rem 3rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: inset 0 0 0 2500px rgba(0, 0, 0, 0.4);
-  color: white; }
+.prop {
+  position: relative; }
 
+.day {
+  background: url("../assets/mobile/bg-image-daytime.jpg") no-repeat center fixed;
+  background-size: cover; }
+
+.night {
+  background: url("../assets/mobile/bg-image-nighttime.jpg") no-repeat center fixed;
+  background-size: cover; }
+
+.rotatable {
+  animation: spin 8s linear infinite; }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
 .quotes {
   display: flex;
   justify-content: space-between;
@@ -68,43 +85,6 @@ body {
     font-weight: 700;
     margin: 0; }
 
-.info {
-  margin: 2rem 0; }
-  .info__time {
-    font-size: 6.4rem;
-    font-weight: 700; }
-  .info__city {
-    font-size: 1.5rem;
-    font-weight: 700; }
-  .info__index {
-    font-size: 1.5rem;
-    font-weight: 700; }
-
-.greeting {
-  display: flex;
-  align-items: center; }
-  .greeting__text {
-    margin: 0;
-    padding-left: 0.5rem;
-    font-size: 14px; }
-
-.rotatable {
-  animation: spin 8s linear infinite; }
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg); } }
-.prop {
-  position: relative; }
-
-.day {
-  background: url("../assets/mobile/bg-image-daytime.jpg") no-repeat center fixed;
-  background-size: cover; }
-
-.night {
-  background: url("../assets/mobile/bg-image-nighttime.jpg") no-repeat center fixed;
-  background-size: cover; }
-
 .details {
   color: white;
   padding: 1rem; }
@@ -117,27 +97,49 @@ body {
     font-weight: 700;
     margin: 1rem 0; }
 
+.info {
+  margin: 2rem 0; }
+  .info__time {
+    font-size: 6.4rem;
+    font-weight: 700; }
+  .info__city {
+    font-size: 1.5rem;
+    font-weight: 700; }
+  .info__index {
+    font-size: 1.5rem;
+    font-weight: 700; }
+  .info .greeting {
+    display: flex;
+    align-items: center; }
+    .info .greeting__text {
+      margin: 0;
+      padding-left: 0.5rem;
+      font-size: 14px; }
+
 @media (min-width: 640px) {
   .main {
     padding: 3rem; }
 
   .quotes {
-    font-size: 1.5rem; }
+    font-size: 1.3rem; }
 
   .info .greeting__text {
-    font-size: 1.5rem; }
+    font-size: 1.3rem; }
   .info .info__time {
     font-size: 10rem; }
   .info .info__abbreviation {
-    font-size: 1.5rem; }
+    font-size: 1.3rem; }
   .info .info__city {
-    font-size: 1.5rem; }
+    font-size: 1.3rem; }
   .info .info__index {
-    font-size: 1.5rem; }
+    font-size: 1.3rem; }
 
   .details {
-    color: white;
-    padding: 3rem; }
+    padding: 1rem 3rem; }
+    .details .details__container {
+      font-size: 1.3rem; }
+    .details .details__highlighted {
+      font-size: 1.5rem; }
 
   .day {
     background: url("../assets/tablet/bg-image-daytime.jpg") no-repeat center fixed;
@@ -146,7 +148,31 @@ body {
   .night {
     background: url("../assets/tablet/bg-image-nighttime.jpg") no-repeat center fixed;
     background-size: cover; } }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
+  .main {
+    padding: 5rem; }
+
+  .quotes {
+    font-size: 1.5rem; }
+
+  .info .greeting__text {
+    font-size: 1.5rem; }
+  .info .info__time {
+    font-size: 12rem; }
+  .info .info__abbreviation {
+    font-size: 1.5rem; }
+  .info .info__city {
+    font-size: 1.5rem; }
+  .info .info__index {
+    font-size: 1.5rem; }
+
+  .details {
+    padding: 1rem 5rem; }
+    .details .details__container {
+      font-size: 1.5rem; }
+    .details .details__highlighted {
+      font-size: 1.5rem; }
+
   .day {
     background: url("../assets/desktop/bg-image-daytime.jpg") no-repeat center fixed;
     background-size: cover; }
@@ -154,5 +180,29 @@ body {
   .night {
     background: url("../assets/desktop/bg-image-nighttime.jpg") no-repeat center fixed;
     background-size: cover; } }
+@media (min-width: 1600px) {
+  .main {
+    padding: 7rem; }
+
+  .quotes {
+    font-size: 2rem; }
+
+  .info .greeting__text {
+    font-size: 2rem; }
+  .info .info__time {
+    font-size: 15rem; }
+  .info .info__abbreviation {
+    font-size: 2rem; }
+  .info .info__city {
+    font-size: 2rem; }
+  .info .info__index {
+    font-size: 2rem; }
+
+  .details {
+    padding: 2rem 7rem; }
+    .details .details__container {
+      font-size: 2rem; }
+    .details .details__highlighted {
+      font-size: 2rem; } }
 
 /*# sourceMappingURL=main.css.map */
