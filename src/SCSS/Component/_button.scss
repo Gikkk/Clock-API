@@ -1,4 +1,5 @@
 .switch{
+  margin-bottom: 3rem;
   padding: 0.7rem;
   color: $primary-color;
   text-transform: uppercase;
@@ -19,7 +20,7 @@
     width: 105%;
     height: 105%;
     z-index: -2;
-    background: linear-gradient(120deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background: linear-gradient(120deg, #977553, #f37055, #913a52, #a166ab, #5073b8, #1098ad, #568b84, #6fba82);
   }
   &:before {
     filter: blur(7px);

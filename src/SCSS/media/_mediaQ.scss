@@ -9,7 +9,15 @@
     font-size: 1.3rem;
   }
 
+  .info__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }  
+
   .info{
+    margin: 0;
+
     .greeting__text{
       font-size: 1.3rem;
     }
@@ -33,9 +41,13 @@
 
   .details{
     padding: 1rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 
     .details__container{
       font-size: 1.3rem;
+      display: grid;
     }
 
     .details__highlighted{
@@ -63,6 +75,12 @@
 
   .quotes{
     font-size: 1.5rem;
+    max-width: 100%;
+
+    &__btn--text{
+      width: 30px;
+      height: 30px;
+    }
   }
 
   .info{
