@@ -23,6 +23,51 @@ const time = document.querySelector(".info__time");
 const greeting =  document.querySelector('.greeting__text');
 const dayNightIcon =  document.querySelector('.icon');
 
+// GET request - details
+async function getTimezone() {
+  try {
+    const responseData = await sendHttpRequest(
+      'GET',
+      "http://worldtimeapi.org/api/ip"
+    );
+
+    year.textContent = `${responseData.day_of_year}`
+    week.textContent = `${responseData.week_number}`
+    day.textContent = `${responseData.day_of_week}`
+    timezone.textContent = `${responseData.timezone}`
+    abbreviation.textContent = `${responseData.abbreviation}`
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+// GET request - quotes
+async function getQuotes() {
+  try {
+    const responseData = await sendHttpRequest(
+      'GET',
+      'https://api.quotable.io/random'
+    );
+
+    quotes.innerHTML = `
+      <section>
+        <p class="quotes__text">${responseData.content}</p>
+        <p class="quotes__author">${responseData.author}</p>
+      </section>
+      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./src/assets/icons/icon-refresh.svg" alt="refresh"></button>`
+
+      if (responseData.author === null) {
+        author.textContent = 'Unknown author'
+      } else {
+        author.textContent = responseData.author;
+      }  
+          
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 // http request function 
 function sendHttpRequest(method, url, data) {
@@ -50,25 +95,6 @@ function sendHttpRequest(method, url, data) {
   return promise;
 }
 
-// GET request - details
-async function getTimezone() {
-  try {
-    const responseData = await sendHttpRequest(
-      'GET',
-      "http://worldtimeapi.org/api/ip"
-    );
-
-    year.textContent = `${responseData.day_of_year}`
-    week.textContent = `${responseData.week_number}`
-    day.textContent = `${responseData.day_of_week}`
-    timezone.textContent = `${responseData.timezone}`
-    abbreviation.textContent = `${responseData.abbreviation}`
-
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 // GET request - location
 async function getLocation() {
   try {
@@ -79,32 +105,6 @@ async function getLocation() {
     city.textContent = `${responseData.city}, `
     index.textContent = `${responseData.country_code}`
 
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-// GET request - quotes
-async function getQuotes() {
-  try {
-    const responseData = await sendHttpRequest(
-      'GET',
-      'https://api.quotable.io/random'
-    );
-
-    quotes.innerHTML = `
-      <section>
-        <p class="quotes__text">${responseData.content}</p>
-        <p class="quotes__author">${responseData.author}</p>
-      </section>
-      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./src/assets/icons/icon-refresh.svg" alt="refresh"></button>`
-
-      if (responseData.author === null) {
-        author.textContent = 'Unknown author'
-      } else {
-        author.textContent = responseData.author;
-      }  
-          
   } catch (error) {
     console.log(error);
   }
@@ -149,12 +149,10 @@ function getTime(){
     dayNightIcon.classList.add('rotatable')
 		dayNightIcon.src = './src/assets/icons/icon-sun.svg';
     dayNightIcon.setAttribute("alt", "sun icon");
-    details.style.backgroundColor = "rgba(255, 255, 255, 0.75)"
 	} else {
 		mainContent.classList.add('night');
 		dayNightIcon.src = './src/assets/icons/icon-moon.svg';
     dayNightIcon.setAttribute("alt", "moon icon");
-    details.style.backgroundColor = " hsl(0, 0%, 0%)"
 	}
 
   let interval = (60 - (new Date()).getSeconds()) * 1000 + 5;

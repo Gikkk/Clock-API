@@ -9,15 +9,7 @@
     font-size: 1.3rem;
   }
 
-  .info__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }  
-
   .info{
-    margin: 0;
-
     .greeting__text{
       font-size: 1.3rem;
     }
@@ -83,7 +75,15 @@
     }
   }
 
+  .info__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }  
+
   .info{
+    margin: 0;
+    
     .greeting__text{
       font-size: 1.5rem;
     }

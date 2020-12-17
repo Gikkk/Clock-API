@@ -93,7 +93,8 @@ body {
 
 .details {
   color: #303030;
-  padding: 1rem; }
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.75); }
   .details__container {
     display: flex;
     justify-content: space-between;
@@ -129,23 +130,16 @@ body {
   .quotes {
     font-size: 1.3rem; }
 
-  .info__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-
-  .info {
-    margin: 0; }
-    .info .greeting__text {
-      font-size: 1.3rem; }
-    .info .info__time {
-      font-size: 10rem; }
-    .info .info__abbreviation {
-      font-size: 1.3rem; }
-    .info .info__city {
-      font-size: 1.3rem; }
-    .info .info__index {
-      font-size: 1.3rem; }
+  .info .greeting__text {
+    font-size: 1.3rem; }
+  .info .info__time {
+    font-size: 10rem; }
+  .info .info__abbreviation {
+    font-size: 1.3rem; }
+  .info .info__city {
+    font-size: 1.3rem; }
+  .info .info__index {
+    font-size: 1.3rem; }
 
   .details {
     padding: 1rem 3rem;
@@ -176,16 +170,23 @@ body {
       width: 30px;
       height: 30px; }
 
-  .info .greeting__text {
-    font-size: 1.5rem; }
-  .info .info__time {
-    font-size: 12rem; }
-  .info .info__abbreviation {
-    font-size: 1.5rem; }
-  .info .info__city {
-    font-size: 1.5rem; }
-  .info .info__index {
-    font-size: 1.5rem; }
+  .info__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+  .info {
+    margin: 0; }
+    .info .greeting__text {
+      font-size: 1.5rem; }
+    .info .info__time {
+      font-size: 12rem; }
+    .info .info__abbreviation {
+      font-size: 1.5rem; }
+    .info .info__city {
+      font-size: 1.5rem; }
+    .info .info__index {
+      font-size: 1.5rem; }
 
   .details {
     padding: 1rem 5rem; }
