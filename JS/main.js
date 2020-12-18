@@ -146,11 +146,11 @@ function getTime(){
 	if (hour >= 5 && hour <= 17 ) {
     mainContent.classList.add('day');
     dayNightIcon.classList.add('rotatable')
-		dayNightIcon.src = './src/assets/icons/icon-sun.svg';
+		dayNightIcon.src = './assets/icons/icon-sun.svg';
     dayNightIcon.setAttribute("alt", "sun icon");
 	} else {
 		mainContent.classList.add('night');
-		dayNightIcon.src = './src/assets/icons/icon-moon.svg';
+		dayNightIcon.src = './assets/icons/icon-moon.svg';
     dayNightIcon.setAttribute("alt", "moon icon");
 	}
 
