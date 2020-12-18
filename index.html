@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./CSS/main.css">
+  <script src="./JS/main.js" defer></script>
+  <title>Clock App</title>
+</head>
+<body>
+  <main class="main">
+    <article class="quotes">
+      <section>
+        <p class="quotes__text"></p>
+        <p class="quotes__author"></p>
+      </section>
+      <button class="quotes__btn" onclick="getQuotes()"></button>
+    </article>
+    <article class="info__container">
+      <article class="info">
+        <section class="greeting">
+          <img class="icon">
+          <p class="greeting__text">GOOD MORNING, IT'S CURRENTLY</p>
+        </section>
+        <section>
+          <span class="info__time"></span>
+          <span class="info__abbreviation"></span>
+        </section>
+        <section>
+          <span class="info__city"></span>
+          <span class="info__index"></span>
+        </section>
+      </article>
+      <article>
+        <!-- <button class="switch"><a href="#aside">More</a></button> -->
+        <a href="#aside" class="switch">More</a>
+      </article>
+    </article>
+  </main>
+  <aside class="details" id="aside">
+    <article class="details__container">
+      <p>CURRENT TIMEZONE</p>
+      <p class="details__timezone details__highlighted"></p>
+    </article>
+    <article class="details__container">
+      <p>DAY OF THE WEEK</p>
+      <p class="details__day details__highlighted"></p>
+    </article>
+    <article class="details__container">
+      <p>WEEK NUMBER</p>
+      <p class="details__week details__highlighted"></p>
+    </article>
+    <article class="details__container">
+      <p>DAY OF THE YEAR</p>
+      <p class="details__year  details__highlighted"></p>
+    </article>
+  </aside>
+</body>
+</html>
+
