@@ -55,7 +55,7 @@ async function getQuotes() {
         <p class="quotes__text">${responseData.content}</p>
         <p class="quotes__author">${responseData.author}</p>
       </section>
-      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./src/assets/icons/icon-refresh.svg" alt="refresh"></button>`
+      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./assets/icons/icon-refresh.svg" alt="refresh"></button>`
 
       if (responseData.author === null) {
         author.textContent = 'Unknown author'
@@ -146,11 +146,11 @@ function getTime(){
 	if (hour >= 5 && hour <= 17 ) {
     mainContent.classList.add('day');
     dayNightIcon.classList.add('rotatable')
-		dayNightIcon.src = './src/assets/icons/icon-sun.svg';
+		dayNightIcon.src = './assets/icons/icon-sun.svg';
     dayNightIcon.setAttribute("alt", "sun icon");
 	} else {
 		mainContent.classList.add('night');
-		dayNightIcon.src = './src/assets/icons/icon-moon.svg';
+		dayNightIcon.src = './assets/icons/icon-moon.svg';
     dayNightIcon.setAttribute("alt", "moon icon");
 	}
 
