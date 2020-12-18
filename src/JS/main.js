@@ -9,64 +9,17 @@ const toggler = document.querySelector(".switch");
 const mainContent = document.querySelector(".main");
 
 // details 
-const year = document.querySelector(".details__year");
-const week = document.querySelector(".details__week");
-const day = document.querySelector(".details__day");
+const countryCode = document.querySelector(".details__code");
+const ipAddress = document.querySelector(".details__ip");
+const detailsCountryName = document.querySelector(".details__CountryName");
 const timezone = document.querySelector(".details__timezone");
 
 // time place
-const abbreviation = document.querySelector(".info__abbreviation");
 const city = document.querySelector(".info__city");
-const index = document.querySelector(".info__index");
+const countryName = document.querySelector(".info__country");
 const time = document.querySelector(".info__time");
 const greeting =  document.querySelector('.greeting__text');
 const dayNightIcon =  document.querySelector('.icon');
-
-// GET request - details
-async function getTimezone() {
-  try {
-    const responseData = await sendHttpRequest(
-      'GET',
-      "http://worldtimeapi.org/api/ip"
-    );
-
-    year.textContent = `${responseData.day_of_year}`
-    week.textContent = `${responseData.week_number}`
-    day.textContent = `${responseData.day_of_week}`
-    timezone.textContent = `${responseData.timezone}`
-    abbreviation.textContent = `${responseData.abbreviation}`
-    
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-
-// GET request - quotes
-async function getQuotes() {
-  try {
-    const responseData = await sendHttpRequest(
-      'GET',
-      'https://api.quotable.io/random'
-    );
-
-    quotes.innerHTML = `
-      <section>
-        <p class="quotes__text">${responseData.content}</p>
-        <p class="quotes__author">${responseData.author}</p>
-      </section>
-      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./assets/icons/icon-refresh.svg" alt="refresh"></button>`
-
-      if (responseData.author === null) {
-        author.textContent = 'Unknown author'
-      } else {
-        author.textContent = responseData.author;
-      }  
-          
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 // http request function 
 function sendHttpRequest(method, url, data) {
@@ -94,6 +47,32 @@ function sendHttpRequest(method, url, data) {
   return promise;
 }
 
+// GET request - quotes
+async function getQuotes() {
+  try {
+    const responseData = await sendHttpRequest(
+      'GET',
+      'https://api.quotable.io/random'
+    );
+
+    quotes.innerHTML = `
+      <section>
+        <p class="quotes__text">${responseData.content}</p>
+        <p class="quotes__author">${responseData.author}</p>
+      </section>
+      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./assets/icons/icon-refresh.svg" alt="refresh"></button>`
+
+      if (responseData.author === null) {
+        author.textContent = 'Unknown author'
+      } else {
+        author.textContent = responseData.author;
+      }  
+          
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 // GET request - location
 async function getLocation() {
   try {
@@ -102,7 +81,11 @@ async function getLocation() {
       'https://freegeoip.app/json/'
     );
     city.textContent = `${responseData.city}, `
-    index.textContent = `${responseData.country_code}`
+    countryName.textContent = `${responseData.country_name}`
+    timezone.textContent = `${responseData.time_zone}`
+    detailsCountryName.textContent = `${responseData.country_name}`
+    ipAddress.textContent = `${responseData.ip}`
+    countryCode.textContent = `${responseData.country_code}`
 
   } catch (error) {
     console.log(error);
@@ -171,7 +154,6 @@ toggler.addEventListener("click", toggleInfo);
 
 
 // calling for functions 
-getTimezone();
 getLocation();
 getQuotes();
 getTime();

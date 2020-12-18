@@ -112,9 +112,6 @@ body {
   .info__city {
     font-size: 1.5rem;
     font-weight: 700; }
-  .info__index {
-    font-size: 1.5rem;
-    font-weight: 700; }
   .info .greeting {
     display: flex;
     align-items: center; }
@@ -134,11 +131,9 @@ body {
     font-size: 1.3rem; }
   .info .info__time {
     font-size: 10rem; }
-  .info .info__abbreviation {
-    font-size: 1.3rem; }
   .info .info__city {
     font-size: 1.3rem; }
-  .info .info__index {
+  .info .info__country {
     font-size: 1.3rem; }
 
   .details {
@@ -181,11 +176,9 @@ body {
       font-size: 1.5rem; }
     .info .info__time {
       font-size: 12rem; }
-    .info .info__abbreviation {
-      font-size: 1.5rem; }
     .info .info__city {
       font-size: 1.5rem; }
-    .info .info__index {
+    .info .info__country {
       font-size: 1.5rem; }
 
   .details {
@@ -213,11 +206,9 @@ body {
     font-size: 2rem; }
   .info .info__time {
     font-size: 15rem; }
-  .info .info__abbreviation {
-    font-size: 2rem; }
   .info .info__city {
     font-size: 2rem; }
-  .info .info__index {
+  .info .info__country {
     font-size: 2rem; }
 
   .details {
