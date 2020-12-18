@@ -9,7 +9,6 @@ const toggler = document.querySelector(".switch");
 const mainContent = document.querySelector(".main");
 
 // details 
-const details = document.querySelector('.details')
 const year = document.querySelector(".details__year");
 const week = document.querySelector(".details__week");
 const day = document.querySelector(".details__day");
@@ -36,7 +35,7 @@ async function getTimezone() {
     day.textContent = `${responseData.day_of_week}`
     timezone.textContent = `${responseData.timezone}`
     abbreviation.textContent = `${responseData.abbreviation}`
-
+    
   } catch (error) {
     console.log(error);
   }
