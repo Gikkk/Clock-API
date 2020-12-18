@@ -55,7 +55,7 @@ async function getQuotes() {
         <p class="quotes__text">${responseData.content}</p>
         <p class="quotes__author">${responseData.author}</p>
       </section>
-      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./src/assets/icons/icon-refresh.svg" alt="refresh"></button>`
+      <button class="quotes__btn" onclick="getQuotes()"><img class="quotes__btn--text" src="./assets/icons/icon-refresh.svg" alt="refresh"></button>`
 
       if (responseData.author === null) {
         author.textContent = 'Unknown author'
