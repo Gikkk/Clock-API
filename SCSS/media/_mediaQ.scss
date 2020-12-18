@@ -1,0 +1,173 @@
+// media queries 
+@media (min-width: 640px){
+
+  .main{
+    padding: 3rem;
+  }
+
+  .quotes{
+    font-size: 1.3rem;
+  }
+
+  .info{
+    .greeting__text{
+      font-size: 1.3rem;
+    }
+
+    .info__time{
+      font-size: 10rem;
+    }
+
+    .info__abbreviation{
+      font-size: 1.3rem;
+    }
+
+    .info__city{
+      font-size: 1.3rem;
+    }
+
+    .info__index{
+      font-size: 1.3rem;
+    }
+  }
+
+  .details{
+    padding: 1rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .details__container{
+      font-size: 1.3rem;
+      display: grid;
+    }
+
+    .details__highlighted{
+      font-size: 1.5rem;
+    }
+  }
+
+
+  .day{
+    background: url("../assets/tablet/bg-image-daytime.jpg")  no-repeat center fixed;
+    background-size: cover;
+  }
+  
+  .night{
+    background: url("../assets/tablet/bg-image-nighttime.jpg")  no-repeat center fixed;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1024px){
+
+  .main{
+    padding: 5rem;
+  }
+
+  .quotes{
+    font-size: 1.5rem;
+    max-width: 100%;
+
+    &__btn--text{
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .info__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }  
+
+  .info{
+    margin: 0;
+    
+    .greeting__text{
+      font-size: 1.5rem;
+    }
+
+    .info__time{
+      font-size: 12rem;
+    }
+
+    .info__abbreviation{
+      font-size: 1.5rem;
+    }
+
+    .info__city{
+      font-size: 1.5rem;
+    }
+
+    .info__index{
+      font-size: 1.5rem;
+    }
+  }
+
+  .details{
+    padding: 1rem 5rem;
+
+    .details__container{
+      font-size: 1.5rem;
+    }
+
+    .details__highlighted{
+      font-size: 1.5rem;
+    }
+  }
+
+  .day{
+    background: url("../assets/desktop/bg-image-daytime.jpg")  no-repeat center fixed;
+    background-size: cover;
+  }
+  
+  .night{
+    background: url("../assets/desktop/bg-image-nighttime.jpg")  no-repeat center fixed;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1600px){
+  .main{
+    padding: 7rem;
+  }
+
+  .quotes{
+    font-size: 2rem;
+  }
+
+  .info{
+    .greeting__text{
+      font-size: 2rem;
+    }
+
+    .info__time{
+      font-size: 15rem;
+    }
+
+    .info__abbreviation{
+      font-size: 2rem;
+    }
+
+    .info__city{
+      font-size: 2rem;
+    }
+
+    .info__index{
+      font-size: 2rem;
+    }
+  }
+
+  .details{
+    padding: 2rem 7rem;
+
+    .details__container{
+      font-size: 2rem;
+    }
+
+    .details__highlighted{
+      font-size: 2rem;
+    }
+  }
+}

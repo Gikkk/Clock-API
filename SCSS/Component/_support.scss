@@ -1,0 +1,19 @@
+.prop{
+  position: relative;
+}
+
+.day{
+  background: url("../assets/mobile/bg-image-daytime.jpg")  no-repeat center fixed;
+  background-size: cover;
+}
+
+.night{
+  background: url("../assets/mobile/bg-image-nighttime.jpg")  no-repeat center fixed;
+  background-size: cover;
+}
+
+.rotatable{
+  animation: spin 20s linear infinite;
+}
+@keyframes spin { 100% { transform:rotate(360deg); } }
+

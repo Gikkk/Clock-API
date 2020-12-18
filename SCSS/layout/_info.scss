@@ -1,0 +1,29 @@
+.info{
+  margin: 2rem 0;
+
+  &__time{
+    font-size: 6.4rem;
+    font-weight: 700;
+  }
+
+  &__city{
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__index{
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .greeting{
+    display: flex;
+    align-items: center;
+  
+    &__text{
+      margin: 0;
+      padding-left: 0.5rem;
+      font-size: 14px;
+    }
+  }
+}
