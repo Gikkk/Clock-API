@@ -10,7 +10,13 @@
     background: transparent;
     border: none;
     outline: none;
-    margin: 0.2rem 1rem;
+    margin: 0.2rem 1rem;  
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+      transform: rotate(45deg);
+    }
   }
 
   &__text{
