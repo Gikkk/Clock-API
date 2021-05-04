@@ -10,6 +10,7 @@
   <title>Clock App</title>
 </head>
 <body>
+  
   <main class="main">
     <section class="quotes">
       <div>
@@ -19,7 +20,7 @@
       <button class="quotes__btn" onclick="getQuotes()"></button>
     </section>
     <section class="info__container">
-      <article class="info">
+      <div class="info">
         <div class="greeting">
           <img class="icon">
           <p class="greeting__text">GOOD MORNING, IT'S CURRENTLY</p>
@@ -31,13 +32,14 @@
           <span class="info__city"></span>
           <span class="info__country"></span>
         </div>
-      </article>
-      <article>
+      </div>
+      <div>
         <!-- <button class="switch"><a href="#aside">More</a></button> -->
         <a href="#aside" class="switch">More</a>
-      </article>
+      </div>
     </section>
   </main>
+
   <aside class="details" id="aside">
     <div class="details__container">
       <p>Current Timezone</p>
@@ -56,6 +58,7 @@
       <p class="details__code  details__highlighted"></p>
     </div>
   </aside>
+
 </body>
 </html>
 
